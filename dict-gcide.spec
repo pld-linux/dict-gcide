@@ -17,12 +17,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This package contains GCIDE (Collaborative International Dictionary of
-English) %version formatted for use by the dictionary server in the
+English) %{version} formatted for use by the dictionary server in the
 dictd package.
 
 %description -l pl
 Ten pakiet zawiera s³ownik GCIDE (Collaborative International
-Dictionary of English) %version sformatowany do u¿ywania z serwerem
+Dictionary of English) %{version} sformatowany do u¿ywania z serwerem
 s³ownika dictd.
 
 %prep
@@ -34,7 +34,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_datadir}/dictd,%{_sysconfdir}/dictd}
 
 dictprefix=%{_datadir}/dictd/%{dictname}
-echo "# Collaborative International Dictionary of English (%version)
+echo "# Collaborative International Dictionary of English (%{version})
 database %{dictname} {
 	data  \"$dictprefix.dict.dz\"
 	index \"$dictprefix.index\"
