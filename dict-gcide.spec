@@ -3,7 +3,7 @@ Summary:	Collaborative International Dictionary of English for dictd
 Summary(pl):	S³ownik Collaborative International Dictionary of English dla dictd
 Name:		dict-%{dictname}
 Version:	0.44
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Dictionaries
 Source0:	ftp://ftp.dict.org/pub/dict/pre/%{name}-%{version}.tar.gz
