@@ -7,7 +7,8 @@ Release:	1
 License:	GPL
 Group:		Applications/Dictionaries
 Source0:	ftp://ftp.dict.org/pub/dict/pre/%{name}-%{version}.tar.gz
-Source1:	ftp://ftp.gnu.org/gnu/gcide/gcide-0.46/README.DIC
+# based on ftp://ftp.gnu.org/gnu/gcide/gcide-0.46/README.DIC
+Source1:	%{name}-README.DIC
 URL:		http://www.dict.org/
 Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
@@ -25,7 +26,7 @@ s³ownika dictd.
 
 %prep
 %setup -c -q
-install %{SOURCE1} .
+install %{SOURCE1} README.DIC
 
 %install
 rm -rf $RPM_BUILD_ROOT
