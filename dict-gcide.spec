@@ -7,6 +7,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Dictionaries
 Source0:	ftp://ftp.dict.org/pub/dict/pre/%{name}-%{version}.tar.gz
+# Source0-md5:	641502e6fedca32cbf9777b1f4f76afe
 # based on ftp://ftp.gnu.org/gnu/gcide/gcide-0.46/README.DIC
 Source1:	%{name}-README.DIC
 URL:		http://www.dict.org/
