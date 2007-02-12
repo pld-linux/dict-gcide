@@ -1,6 +1,6 @@
 %define		dictname gcide
 Summary:	Collaborative International Dictionary of English for dictd
-Summary(pl.UTF-8):   Słownik Collaborative International Dictionary of English dla dictd
+Summary(pl.UTF-8):	Słownik Collaborative International Dictionary of English dla dictd
 Name:		dict-%{dictname}
 Version:	0.44
 Release:	3
