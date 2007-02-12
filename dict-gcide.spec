@@ -1,6 +1,6 @@
 %define		dictname gcide
 Summary:	Collaborative International Dictionary of English for dictd
-Summary(pl):	S≥ownik Collaborative International Dictionary of English dla dictd
+Summary(pl.UTF-8):   S≈Çownik Collaborative International Dictionary of English dla dictd
 Name:		dict-%{dictname}
 Version:	0.44
 Release:	3
@@ -20,10 +20,10 @@ This package contains GCIDE (Collaborative International Dictionary of
 English) %{version} formatted for use by the dictionary server in the
 dictd package.
 
-%description -l pl
-Ten pakiet zawiera s≥ownik GCIDE (Collaborative International
-Dictionary of English) %{version} sformatowany do uøywania z serwerem
-s≥ownika dictd.
+%description -l pl.UTF-8
+Ten pakiet zawiera s≈Çownik GCIDE (Collaborative International
+Dictionary of English) %{version} sformatowany do u≈ºywania z serwerem
+s≈Çownika dictd.
 
 %prep
 %setup -c -q
