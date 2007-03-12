@@ -3,7 +3,7 @@ Summary:	Collaborative International Dictionary of English for dictd
 Summary(pl.UTF-8):	Słownik Collaborative International Dictionary of English dla dictd
 Name:		dict-%{dictname}
 Version:	0.44
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Dictionaries
 Source0:	ftp://ftp.dict.org/pub/dict/pre/%{name}-%{version}.tar.gz
@@ -11,6 +11,7 @@ Source0:	ftp://ftp.dict.org/pub/dict/pre/%{name}-%{version}.tar.gz
 # based on ftp://ftp.gnu.org/gnu/gcide/gcide-0.46/README.DIC
 Source1:	%{name}-README.DIC
 URL:		http://www.dict.org/
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,19 +40,17 @@ database %{dictname} {
 	data  \"$dictprefix.dict.dz\"
 	index \"$dictprefix.index\"
 }" > $RPM_BUILD_ROOT%{_sysconfdir}/dictd/%{dictname}.dictconf
-mv %{dictname}.* $RPM_BUILD_ROOT%{_datadir}/dictd
+cp -a %{dictname}.* $RPM_BUILD_ROOT%{_datadir}/dictd
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2
-fi
+%service -q dictd restart
 
 %postun
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2 || true
+if [ "$1" = 0 ]; then
+	%service -q dictd restart
 fi
 
 %files
