@@ -3,7 +3,7 @@ Summary:	Collaborative International Dictionary of English for dictd
 Summary(pl.UTF-8):	Słownik Collaborative International Dictionary of English dla dictd
 Name:		dict-%{dictname}
 Version:	0.44
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Dictionaries
 Source0:	ftp://ftp.dict.org/pub/dict/pre/%{name}-%{version}.tar.gz
@@ -14,6 +14,7 @@ URL:		http://www.dict.org/
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
